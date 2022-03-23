@@ -2,37 +2,139 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  margin: 0;
+  font-family: monospace;
+  background: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #00203FFF;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.wrapper {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.wrapper.left {
+  left: 0;
+}
+
+.wrapper.right {
+  left: 50%;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #00203FFF;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.wrapper.right::after {
+  left: -8px;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #00203FFF;
+  z-index: 1;
+}
+
+.wrapper.right::before {
+  left: 8px;
+}
+
+.wrapper .content {
+  padding: 30px 30px 30px 30px;
+  background: #ADEFD1FF;
+  text-align: left;
+  position: relative;
+  border: solid 2px #00203FFF;
+}
+
+.wrapper.right .content {
+  padding: 30px 30px 30px 30px;
+}
+
+.wrapper .content h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00203FFF;
+}
+
+.wrapper .content time {
+border: solid 1px #00203FFF;
+padding: 2px;
+}
+
+.wrapper .content p {
+  margin: 10px 0px 0px 0px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 760px) {
+  .timeline {
+    max-width: 100%
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .timeline::after {
+    left: 90px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .wrapper {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .wrapper.right {
+    left: 0%;
+  }
+
+  .wrapper.left::after, 
+  .wrapper.right::after {
+    left: 82px;
+  }
+
+  .wrapper.left::before,
+  .wrapper.right::before {
+    left: 100px;
+    border-color: transparent #00203FFF transparent transparent;
   }
 }
