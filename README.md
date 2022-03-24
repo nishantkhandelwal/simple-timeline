@@ -1,6 +1,7 @@
 # simple-timeline
 
-A basic timeline react based component
+A basic timeline react based component created from CREATE-REACT-APP.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
