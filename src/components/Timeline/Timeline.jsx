@@ -1,7 +1,7 @@
 import React from 'react';
 import Event from '../Event/Event';
 
-export default function Timeline(props) {
+const Timeline = (props) => {
   return (
     <div className="timeline">
       {props.events.map((event, index) => (
@@ -13,4 +13,6 @@ export default function Timeline(props) {
       ))}
     </div>
   );
-}
+};
+
+export default React.memo(Timeline);

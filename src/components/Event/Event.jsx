@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Event(props) {
+const Event = (props) => {
   return (
     <div className={`wrapper ${props.alignment}`}>
       <div className="content">
@@ -10,4 +10,5 @@ export default function Event(props) {
       </div>
     </div>
   );
-}
+};
+export default React.memo(Event);

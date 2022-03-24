@@ -8,6 +8,8 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       // Here goes the logic/data fetching for a new event
+      // For now very basic implementatio is implemented, here we can implement some real time data fetch/polling
+      // Generate a random string and set that as Event title.
       let randomTitle = (Math.random() + 1).toString(36).substring(7);
       let date = new Date();
       let time = date.toLocaleTimeString();
@@ -23,7 +25,7 @@ function App() {
         }
         return [newEvent, ...oldEvents];
       });
-    }, 5000);
+    }, 5000); // timer is set to 5000 - to refresh the timeline for new event.
     return () => {
       clearInterval(interval);
     };
